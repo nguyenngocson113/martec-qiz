@@ -1,8 +1,9 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
+import { UserStateI } from "../../../store/reducers/user";
 
 interface AuthLinksI {
-  auth: any;
+  auth: UserStateI;
   logout: () => void;
 }
 const AuthLinks: FC<AuthLinksI> = ({ auth, logout }) => {
@@ -14,12 +15,12 @@ const AuthLinks: FC<AuthLinksI> = ({ auth, logout }) => {
             <Link
               onClick={() => logout()}
               to="/login"
-              className="cursor-pointer text-gray-300 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
             >
               Logout
             </Link>
             <div className="px-2 py-1 border text-sm">
-              Welcome, {auth.user.email}
+              Welcome, {auth.user.email || auth.user.lastName}
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ interface ButtonI {
   isLoading?: boolean;
   text?: string;
   type?: "button" | "submit" | "reset" | undefined;
-  onClick?: any;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 const Button: FC<ButtonI> = ({ isLoading, text, type, onClick }) => {
   return (

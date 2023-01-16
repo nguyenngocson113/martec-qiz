@@ -119,7 +119,7 @@ const InformationEdit: FC<InformationI> = ({ user, onEdit }) => {
                 <div className="mt-5">
                   <button
                     type="submit"
-                    className="border p-2 bg-green-100 border-green-200 text-green-700"
+                    className="border p-2 rounded-md bg-green-100 border-green-200 text-green-700"
                     disabled={!dirty}
                   >
                     Save Information
@@ -127,7 +127,7 @@ const InformationEdit: FC<InformationI> = ({ user, onEdit }) => {
 
                   <button
                     type="button"
-                    className="ml-3 border p-2 bg-red-100 border-red-200 text-red-700"
+                    className="ml-3 border p-2 rounded-md bg-red-100 border-red-200 text-red-700"
                     onClick={() => onEdit(false)}
                   >
                     Cancel

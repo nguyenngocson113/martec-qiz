@@ -41,7 +41,7 @@ export const loginUser = createAsyncThunk(
         })
       );
       return {
-        user,
+        user: existUser,
         isSuccess: true,
       };
     } catch (error) {
@@ -91,7 +91,7 @@ export const updateUser = createAsyncThunk(
         })
       );
       return {
-        user,
+        user: existUser,
         isSuccess: true,
       };
     } catch (error) {
