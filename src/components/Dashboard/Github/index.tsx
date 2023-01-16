@@ -27,13 +27,12 @@ const SearchRepo = () => {
                 classWrapper="w-3/4"
                 placeholder="Name"
                 classAttr={
-                  "h-full appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 sm:text-sm"
+                  "h-full appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 sm:text-sm"
                 }
-                onBlur={undefined}
               />
               <button
                 type="submit"
-                className="ml-3 w-1/4 border p-2 bg-green-100 border-green-200 text-green-700"
+                className="ml-3 w-1/4 border p-2 rounded-md bg-green-100 border-green-200 text-green-700"
               >
                 Load Repos
               </button>
@@ -45,7 +44,10 @@ const SearchRepo = () => {
         <ul className="flex flex-col pl-0 mb-0 rounded-lg">
           {repos.map((repo: RepoI) => {
             return (
-              <li className="relative block px-4 py-2 pt-0 pl-0 leading-normal bg-white border-0 rounded-t-lg text-sm text-inherit">
+              <li
+                key={repo.full_name}
+                className="relative block px-4 py-2 pt-0 pl-0 leading-normal bg-white border-0 rounded-t-lg text-sm text-inherit"
+              >
                 {repo.full_name}
               </li>
             );

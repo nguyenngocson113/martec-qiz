@@ -5,7 +5,7 @@ const registerSchema = Yup.object().shape(
   {
     phone: Yup.string()
       .trim()
-      .matches(/(84|0[3|5|7|8|9])+([0-9]{8})\b/)
+      .matches(/(84|0[3|5|7|8|9])+([0-9]{8})\b/, "Invalid format")
       .when("email", {
         is: (email: string) => isEmpty(email),
         then: Yup.string().required("Field is required"),

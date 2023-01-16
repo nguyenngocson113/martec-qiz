@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { FunctionComponent, SVGProps, useEffect } from "react";
+import { FunctionComponent, SVGProps, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import notitcationReducer from "../../store/reducers/notification";
 import { ReactComponent as ErrorIcon } from "./error.svg";
@@ -15,17 +15,18 @@ const Icons: Record<
 
 const Notification = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const notifications = useSelector(
+  const { notifications } = useSelector(
     (state: DefaultRootState) => state.notification
   );
 
   useEffect(() => {
     notifications.map((notification) => {
       setTimeout(() => {
-        dispatch(notitcationReducer.actions.remove(notification.id));
+        dispatch(notitcationReducer.actions.remove({ id: notification.id }));
       }, 5000);
     });
   }, [notifications]);
+  console.log("notifications:", notifications);
 
   return (
     <ul>
@@ -36,14 +37,15 @@ const Notification = () => {
         return (
           <div
             className={classNames(
-              "h-screen mt-5 z-50 ml-auto mr-auto fixed right-0 left-0 visible"
+              "mt-5 z-50 ml-auto mr-auto fixed right-0 left-0 visible"
             )}
+            key={notification.id}
           >
             <div
               className={classNames(
                 "border-gray-300 border p-3 flex items-start shadow-lg rounded-md space-x-2",
                 {
-                  "bg-white": type === "success",
+                  "bg-green-500": type === "success",
                   "text-white bg-red-500": type === "error",
                 }
               )}

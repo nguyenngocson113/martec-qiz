@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { omitBy } from "lodash";
+import { filter } from "lodash";
 
 export interface NotificationI {
   type: string;
@@ -8,21 +8,31 @@ export interface NotificationI {
   id: string;
 }
 
+export interface NotificationsState {
+  notifications: NotificationI[];
+}
+const initialState: NotificationsState = {
+  notifications: [],
+};
 const notificationSlice = createSlice({
   name: "notification",
-  initialState: [] as NotificationI[],
+  initialState,
   reducers: {
     add(state, action) {
-      state.push({
+      state.notifications.push({
         type: action.payload.type,
         title: action.payload.title,
         content: action.payload.content,
-        id: `${new Date().getTime}`,
+        id: `${new Date().getTime()}`,
       });
     },
     remove(state, action) {
+      const { notifications } = state;
       const id = action.payload.id;
-      omitBy(state, (notification) => notification.id === id);
+      state.notifications = filter(
+        notifications,
+        (notification) => notification.id !== id
+      );
     },
   },
 });

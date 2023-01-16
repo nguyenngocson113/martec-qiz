@@ -1,16 +1,23 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const GITHUB_API = "https://api.github.com";
+
 export const getRepos = createAsyncThunk(
   "repos/getRepos",
   async (username: string) => {
-    const response = await axios.get(
-      `https://api.github.com/users/${username}/repos`
-    );
-    return {
-      repos: response.data,
-      isSuccess: true,
-    };
+    try {
+      const response = await axios.get(`${GITHUB_API}/users/${username}/repos`);
+      return {
+        repos: response.data,
+        isSuccess: true,
+      };
+    } catch (error) {
+      return {
+        repos: [],
+        isSuccess: false,
+      };
+    }
   }
 );
 

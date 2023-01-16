@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { auth, register, notification, user, repos } from "./reducers";
 import { AuthI } from "./reducers/auth";
 import { ReposI } from "./reducers/github-repo";
-import { NotificationI } from "./reducers/notification";
+import { NotificationsState } from "./reducers/notification";
 import { RegisterI } from "./reducers/register";
 import { UserStateI } from "./reducers/user";
 
@@ -19,7 +19,7 @@ const store = configureStore({
 export type RootState = {
   auth: AuthI;
   register: RegisterI;
-  notification: NotificationI[];
+  notification: NotificationsState;
   user: UserStateI;
   repos: ReposI;
 };
