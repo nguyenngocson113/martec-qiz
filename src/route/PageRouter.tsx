@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 
-import Dashboard from "../components/Dashboard";
-import Login from "../components/Login";
+import Dashboard from "../pages/Dashboard";
+import Login from "../pages/Login";
 import Notification from "../components/Notification";
-import Register from "../components/Register";
+import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 

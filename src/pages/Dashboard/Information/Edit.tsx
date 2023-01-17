@@ -1,11 +1,12 @@
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { updateUser, UserI } from "../../../store/reducers/user";
-import TextInput from "../../Inputs/TextInput";
-import PasswordInput from "../../Inputs/PasswordInput";
+import TextInput from "../../../components/Inputs/TextInput";
+import PasswordInput from "../../../components/Inputs/PasswordInput";
 import registerSchema from "../../Register/schemaValidation";
 import { FC } from "react";
 import { InformationI } from "./View";
+import Button from "../../../components/Inputs/Button";
 
 const INPUT_STYLES =
   "appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 sm:text-sm";
@@ -116,22 +117,20 @@ const InformationEdit: FC<InformationI> = ({ user, onEdit }) => {
                     />
                   </li>
                 </ul>
-                <div className="mt-5">
-                  <button
+                <div className="flex mt-5">
+                  <Button
                     type="submit"
-                    className="border p-2 rounded-md bg-green-100 border-green-200 text-green-700"
                     disabled={!dirty}
-                  >
-                    Save Information
-                  </button>
+                    text="Save Information"
+                  />
 
-                  <button
+                  <Button
                     type="button"
-                    className="ml-3 border p-2 rounded-md bg-red-100 border-red-200 text-red-700"
+                    className="ml-3 "
                     onClick={() => onEdit(false)}
-                  >
-                    Cancel
-                  </button>
+                    text="Cancel"
+                    color="error"
+                  />
                 </div>
               </form>
             );

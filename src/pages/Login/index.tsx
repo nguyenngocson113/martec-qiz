@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
 
-import TextInput from "./Inputs/TextInput";
-import Button from "./Inputs/Button";
+import TextInput from "../../components/Inputs/TextInput";
 import { Formik } from "formik";
-import { loginUser, UserI, UserStateI } from "../store/reducers/user";
+import { loginUser, UserI, UserStateI } from "../../store/reducers/user";
 import { isEmpty } from "lodash";
+import Button from "../../components/Inputs/Button";
 
 const loginSchema = Yup.object().shape(
   {

@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { find } from "lodash";
 
 const GITHUB_API = "https://api.github.com";
 
@@ -22,7 +23,11 @@ export const getRepos = createAsyncThunk(
 );
 
 export interface RepoI {
+  id: number;
   full_name: string;
+  name: string;
+  language: string;
+  share: number;
 }
 export interface ReposI {
   repos: RepoI[];
@@ -38,7 +43,16 @@ const initialState: ReposI = {
 const reposSlice = createSlice({
   name: "repos",
   initialState,
-  reducers: {},
+  reducers: {
+    share(state, action) {
+      const { id } = action.payload;
+      const { repos = [] } = state;
+      const repo = find(repos, { id });
+      if (!repo) return;
+      const { share = 0 } = repo;
+      repo.share = share + 1;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getRepos.pending, (state) => {
       state.isLoading = true;

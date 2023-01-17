@@ -2,8 +2,8 @@ import classNames from "classnames";
 import { FunctionComponent, SVGProps, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import notitcationReducer from "../../store/reducers/notification";
-import { ReactComponent as ErrorIcon } from "./error.svg";
-import { ReactComponent as SuccessIcon } from "./success.svg";
+import { ReactComponent as ErrorIcon } from "./images/error.svg";
+import { ReactComponent as SuccessIcon } from "./images/success.svg";
 
 const Icons: Record<
   string,
@@ -26,7 +26,6 @@ const Notification = () => {
       }, 5000);
     });
   }, [notifications]);
-  console.log("notifications:", notifications);
 
   return (
     <ul>

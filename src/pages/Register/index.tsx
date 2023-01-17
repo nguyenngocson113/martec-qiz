@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../store/reducers/register";
 import { UserI } from "../../store/reducers/user";
-import Button from "../Inputs/Button";
-import TextInput from "../Inputs/TextInput";
+import TextInput from "../../components/Inputs/TextInput";
 import registerSchema from "./schemaValidation";
+import Button from "../../components/Inputs/Button";
 
 interface UserRegister extends UserI {
   confirmPassword: string;

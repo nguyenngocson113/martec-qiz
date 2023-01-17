@@ -47,7 +47,7 @@ const TextInput: FC<TextInputI> = ({
         placeholder={placeholder}
       />
       {nameError && (
-        <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+        <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1 mb-1">
           {nameError}
         </span>
       )}
