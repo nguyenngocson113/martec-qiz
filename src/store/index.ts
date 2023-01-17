@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { register, notification, user, repos } from "./reducers";
+import { notification, register, repos, user } from "./reducers";
 import { ReposI } from "./reducers/github-repo";
 import { NotificationsState } from "./reducers/notification";
 import { RegisterI } from "./reducers/register";

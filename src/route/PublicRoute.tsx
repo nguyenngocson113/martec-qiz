@@ -1,9 +1,11 @@
-import React, { FC } from "react";
-import { useSelector } from "react-redux";
+import { ElementType, FC } from "react";
 import { Navigate } from "react-router-dom";
 
+// hooks
+import { useSelector } from "react-redux";
+
 interface PublicRouteI {
-  component: any;
+  component: ElementType;
   path: string;
 }
 

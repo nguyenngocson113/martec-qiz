@@ -1,6 +1,8 @@
 import React, { FC } from "react";
-import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+
+// hooks
+import { useSelector } from "react-redux";
 
 interface PrivateRouteI {
   component: React.ElementType;

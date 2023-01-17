@@ -1,6 +1,6 @@
+import { ReactComponent as EditIcon } from "public/images/edit.svg";
 import { FC } from "react";
-import { ReactComponent as EditIcon } from "../../../public/images/edit.svg";
-import { UserI } from "../../../store/reducers/user";
+import { UserI } from "store/reducers/user";
 
 export interface InformationI {
   user: UserI;

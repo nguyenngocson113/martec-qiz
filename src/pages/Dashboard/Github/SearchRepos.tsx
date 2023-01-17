@@ -1,8 +1,8 @@
+import Button from "components/Inputs/Button";
+import TextInput from "components/Inputs/TextInput";
 import { Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import Button from "../../../components/Inputs/Button";
-import TextInput from "../../../components/Inputs/TextInput";
-import { getRepos } from "../../../store/reducers/github-repo";
+import { getRepos } from "store/reducers/github-repo";
 import * as Yup from "yup";
 
 interface ParamsGetReposI {

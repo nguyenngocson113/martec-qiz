@@ -1,12 +1,12 @@
+import Button from "components/Inputs/Button";
+import PasswordInput from "components/Inputs/PasswordInput";
+import TextInput from "components/Inputs/TextInput";
 import { Formik } from "formik";
-import { useDispatch } from "react-redux";
-import { updateUser, UserI } from "../../../store/reducers/user";
-import TextInput from "../../../components/Inputs/TextInput";
-import PasswordInput from "../../../components/Inputs/PasswordInput";
-import registerSchema from "../../Register/schemaValidation";
+import registerSchema from "pages/Register/schemaValidation";
 import { FC } from "react";
+import { useDispatch } from "react-redux";
+import { updateUser, UserI } from "store/reducers/user";
 import { InformationI } from "./View";
-import Button from "../../../components/Inputs/Button";
 
 const INPUT_STYLES =
   "appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 sm:text-sm";

@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { FunctionComponent, SVGProps, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import notitcationReducer from "../../store/reducers/notification";
+import notitcationReducer from "store/reducers/notification";
 import { ReactComponent as ErrorIcon } from "./images/error.svg";
 import { ReactComponent as SuccessIcon } from "./images/success.svg";
 

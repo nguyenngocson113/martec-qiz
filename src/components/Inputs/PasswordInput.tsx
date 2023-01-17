@@ -1,7 +1,7 @@
 import classNames from "classnames";
+import { ReactComponent as EyeIcon } from "public/images/eye.svg";
+import { ReactComponent as EyeSlashIcon } from "public/images/eyeSlash.svg";
 import { FC, useState } from "react";
-import { ReactComponent as EyeIcon } from "../../public/images/eye.svg";
-import { ReactComponent as EyeSlashIcon } from "../../public/images/eyeSlash.svg";
 
 interface PasswordInput {
   name: string;

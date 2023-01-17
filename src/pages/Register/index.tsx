@@ -1,13 +1,12 @@
+import Button from "components/Inputs/Button";
+import TextInput from "components/Inputs/TextInput";
 import { Formik } from "formik";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { Link, useNavigate } from "react-router-dom";
-import { registerUser } from "../../store/reducers/register";
-import { UserI } from "../../store/reducers/user";
-import TextInput from "../../components/Inputs/TextInput";
+import { registerUser } from "store/reducers/register";
+import { UserI } from "store/reducers/user";
 import registerSchema from "./schemaValidation";
-import Button from "../../components/Inputs/Button";
 
 interface UserRegister extends UserI {
   confirmPassword: string;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { UserStateI } from "../../../store/reducers/user";
+import { UserStateI } from "store/reducers/user";
 import Edit from "./Edit";
 import View from "./View";
 

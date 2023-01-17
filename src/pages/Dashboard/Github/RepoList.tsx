@@ -1,7 +1,6 @@
+import Button from "components/Inputs/Button";
 import { useDispatch, useSelector } from "react-redux";
-import Button from "../../../components/Inputs/Button";
-import { RepoI } from "../../../store/reducers/github-repo";
-import reposReducer from "../../../store/reducers/github-repo";
+import reposReducer, { RepoI } from "store/reducers/github-repo";
 
 const Result = () => {
   const dispatch = useDispatch<AppDispatch>();
