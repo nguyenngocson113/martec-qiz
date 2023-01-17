@@ -1,6 +1,8 @@
+import classNames from "classnames";
 import { ReactComponent as EditIcon } from "public/images/edit.svg";
 import { FC } from "react";
 import { UserI } from "store/reducers/user";
+import Classes from "./classes";
 
 export interface InformationI {
   user: UserI;
@@ -30,14 +32,14 @@ const Information: FC<InformationI> = ({ user, onEdit }) => {
       </div>
       <div className="flex-auto p-4">
         <ul className="flex flex-col pl-0 mb-0 rounded-lg">
-          <li className="relative block px-4 py-2 pt-0 pl-0 leading-normal bg-white border-0 rounded-t-lg text-sm text-inherit">
+          <li className={classNames(Classes.viewElementClasses)}>
             <strong className="text-slate-700">Full Name:</strong> &nbsp;{" "}
             {firstName} {lastName}
           </li>
-          <li className="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
+          <li className={classNames(Classes.viewElementClasses)}>
             <strong className="text-slate-700">Mobile:</strong> &nbsp; {phone}
           </li>
-          <li className="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
+          <li className={classNames(Classes.viewElementClasses)}>
             <strong className="text-slate-700">Email:</strong> &nbsp;
             {email}
           </li>

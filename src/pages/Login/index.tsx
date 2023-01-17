@@ -1,13 +1,14 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import * as Yup from "yup";
-
+import classNames from "classnames";
 import Button from "components/Inputs/Button";
 import TextInput from "components/Inputs/TextInput";
 import { Formik } from "formik";
 import { isEmpty } from "lodash";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { loginUser, UserI, UserStateI } from "store/reducers/user";
+import * as Yup from "yup";
+import Classes from "./classes";
 
 const loginSchema = Yup.object().shape(
   {
@@ -79,9 +80,7 @@ const Login = () => {
                     onBlur={handleBlur}
                     nameError={errors.email}
                     placeholder={"Please enter your email address."}
-                    classAttr={
-                      "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    }
+                    classAttr={classNames("rounded-t-md", Classes.inputClasses)}
                   />
                   <TextInput
                     type="phone"
@@ -91,9 +90,7 @@ const Login = () => {
                     onBlur={handleBlur}
                     nameError={errors.phone}
                     placeholder={"Please enter your phone."}
-                    classAttr={
-                      "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    }
+                    classAttr={Classes.inputClasses}
                   />
                   <TextInput
                     type="password"
@@ -103,9 +100,7 @@ const Login = () => {
                     onBlur={handleBlur}
                     nameError={errors.password}
                     placeholder={"Please enter your password."}
-                    classAttr={
-                      "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    }
+                    classAttr={classNames("rounded-b-md", Classes.inputClasses)}
                   />
                 </div>
 

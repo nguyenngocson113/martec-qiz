@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Button from "components/Inputs/Button";
 import TextInput from "components/Inputs/TextInput";
 import { Formik } from "formik";
@@ -6,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "store/reducers/register";
 import { UserI } from "store/reducers/user";
+import Classes from "./classes";
 import registerSchema from "./schemaValidation";
 
 interface UserRegister extends UserI {
@@ -74,9 +76,10 @@ const Register = () => {
                         onBlur={handleBlur}
                         nameError={errors.firstName}
                         placeholder="First Name"
-                        classAttr={
-                          "appearance-none rounded-t-md rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        }
+                        classAttr={classNames(
+                          "rounded-t-md",
+                          Classes.inputClasses
+                        )}
                       />
                     </div>
                     <div>
@@ -88,9 +91,7 @@ const Register = () => {
                         onBlur={handleBlur}
                         nameError={errors.lastName}
                         placeholder="Last Name"
-                        classAttr={
-                          "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        }
+                        classAttr={classNames(Classes.inputClasses)}
                       />
                     </div>
                     <div>
@@ -102,9 +103,7 @@ const Register = () => {
                         onBlur={handleBlur}
                         nameError={errors.email}
                         placeholder="Email"
-                        classAttr={
-                          "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        }
+                        classAttr={classNames(Classes.inputClasses)}
                       />
                     </div>
                     <div>
@@ -116,9 +115,7 @@ const Register = () => {
                         onBlur={handleBlur}
                         nameError={errors.phone}
                         placeholder="Phone"
-                        classAttr={
-                          "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        }
+                        classAttr={classNames(Classes.inputClasses)}
                       />
                     </div>
                     <div>
@@ -130,9 +127,7 @@ const Register = () => {
                         onBlur={handleBlur}
                         nameError={errors.password}
                         placeholder="Password"
-                        classAttr={
-                          "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        }
+                        classAttr={classNames(Classes.inputClasses)}
                       />
                     </div>
                     <div>
@@ -144,9 +139,10 @@ const Register = () => {
                         onBlur={handleBlur}
                         nameError={errors.confirmPassword}
                         placeholder="Confirm Password"
-                        classAttr={
-                          "appearance-none rounded-b-md rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        }
+                        classAttr={classNames(
+                          "rounded-b-md",
+                          Classes.inputClasses
+                        )}
                       />
                     </div>
                   </div>

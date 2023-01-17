@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Button from "components/Inputs/Button";
 import PasswordInput from "components/Inputs/PasswordInput";
 import TextInput from "components/Inputs/TextInput";
@@ -6,6 +7,7 @@ import registerSchema from "pages/Register/schemaValidation";
 import { FC } from "react";
 import { useDispatch } from "react-redux";
 import { updateUser, UserI } from "store/reducers/user";
+import Classes from "./classes";
 import { InformationI } from "./View";
 
 const INPUT_STYLES =
@@ -74,7 +76,7 @@ const InformationEdit: FC<InformationI> = ({ user, onEdit }) => {
                       label={"Last Name"}
                     />
                   </li>
-                  <li className="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
+                  <li className={classNames(Classes.inputClasses)}>
                     <TextInput
                       name={"phone"}
                       value={phone}
@@ -84,7 +86,7 @@ const InformationEdit: FC<InformationI> = ({ user, onEdit }) => {
                       label={"Phone"}
                     />
                   </li>
-                  <li className="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
+                  <li className={classNames(Classes.inputClasses)}>
                     <TextInput
                       name={"email"}
                       value={email}
@@ -94,7 +96,7 @@ const InformationEdit: FC<InformationI> = ({ user, onEdit }) => {
                       label={"Email"}
                     />
                   </li>
-                  <li className="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
+                  <li className={classNames(Classes.inputClasses)}>
                     <PasswordInput
                       name={"password"}
                       value={password}
@@ -105,7 +107,7 @@ const InformationEdit: FC<InformationI> = ({ user, onEdit }) => {
                       label={"Password"}
                     />
                   </li>
-                  <li className="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
+                  <li className={classNames(Classes.inputClasses)}>
                     <PasswordInput
                       name={"confirmPassword"}
                       value={confirmPassword}
