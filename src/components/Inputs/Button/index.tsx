@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { FC } from "react";
 import Icon from "./Icon";
-import { ReactComponent as LoadingIcon } from "./images/loading.svg";
+import Loading from "./Loading";
 
 interface ButtonI {
   isLoading?: boolean;
@@ -21,7 +21,7 @@ const COLOR_CLASSES: Record<string, string> = {
 };
 
 const Button: FC<ButtonI> = ({
-  isLoading,
+  isLoading = false,
   text,
   type,
   onClick,
@@ -45,7 +45,7 @@ const Button: FC<ButtonI> = ({
           className
         )}
       >
-        {isLoading && <LoadingIcon />}
+        <Loading loading={isLoading} />
         <Icon icon={icon} />
         {text && text}
       </button>

@@ -43,7 +43,9 @@ const TextInput: FC<TextInputI> = ({
         value={value ?? name}
         onChange={onChange}
         onBlur={onBlur}
-        className={classNames(classAttr, { "border-red-500": nameError })}
+        className={classNames(classAttr, {
+          "border-red-500": nameError,
+        })}
         placeholder={placeholder}
       />
       {nameError && (
