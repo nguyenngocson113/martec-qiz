@@ -12,7 +12,7 @@ const Result = () => {
   };
   return (
     <div className="flex-auto p-4">
-      <ul className="flex flex-wrap gap-x-8 gap-y-4 flex-row pl-0 mb-0 rounded-lg">
+      <ul className="grid gap-x-8 gap-y-4 grid-cols-4 pl-0 mb-0 rounded-lg">
         {repos.map((repo: RepoI) => {
           return (
             <li
